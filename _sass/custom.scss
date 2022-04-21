@@ -13,8 +13,14 @@ h4 {
 
 .site-header {
     a {
-        color: $text-color;
+        color: #e8eaed;
     }
+
+    a.active {
+        color: #fff;
+        cursor: default;
+    }
+
     /*
     .site-title a {
         font-size: 2em;
@@ -46,15 +52,19 @@ h4 {
     height: 100%;
 }
 
-div .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
+//div .container {
+//    display: flex;
+//    align-items: center;
+//    justify-content: space-around;
+//}
 
 /* Hide the link that should open and close the topnav on small screens */
 .site-nav .icon {
     display: none;
+}
+
+.btn:hover {
+    text-decoration: none;
 }
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
@@ -92,3 +102,9 @@ div .container {
         width: 100%;
     }
 } 
+
+.event {
+    section {
+        margin: 50px 0;
+    }
+}

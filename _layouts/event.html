@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<article {% if page.feature-img %}class="feature-image"{% endif %}>
+<article class="event {% if page.feature-img %}feature-image{% endif %}">
     <header style="background-image: url('{{ site.baseurl }}/{{ page.feature-img }}')">
         <h1 class="title">{{ page.feature-title | default: page.title }}</h1>
         {% if page.event.topic %}<h2 class="subtitle">{{ page.event.topic }}</h2>{% endif %}
@@ -9,19 +9,57 @@ layout: default
         {% if page.event.registration_url %}<a href="{{ page.event.registration_url }}">Register</a>{% endif %}
     </header>
     <section class="description">
-        <h3>{{ page.event.description.short }}</h3>
-        {% for p in page.event.description.long %}
-        <p>{{ p }}</p>
-        {% endfor %}
+        {{ page.event.description | markdownify }}
     </section>
+    {% if page.event.speaker %}
     <section class="speaker">
         <h3>Speaker</h3>
         {% if page.event.speaker.image_url %}
-        <p><img src="{{ page.event.speaker.image_url }}" class="speaker-image"></p>
+        <div style="float: left; margin: 5px;"><img src="{{ page.event.speaker.image_url | relative_url }}" class="speaker-image"></div>
         {% endif %}
         <h3>{{ page.event.speaker.name }}</h3>
         <h4>{{ page.event.speaker.byline }}</h4>
         <p>{{ page.event.speaker.bio }}</p>
+    </section>
+    {% endif %}
+    {% if layout.event.packing_list %}
+    <section class="packing_list">
+
+    <h3>Packing List</h3>
+    {{ layout.event.packing_list | markdownify }}
+    </section>
+    {% endif %}
+    <section class="location">
+        <h3>Location</h3>
+        <div class="responsive-frame">
+            <iframe 
+                width="800" 
+                height="300" 
+                frameborder="0" 
+                style="border:0;" 
+                allowfullscreen="" 
+                aria-hidden="false" 
+                tabindex="0"
+                src="{{ page.event.location.gmap_embed_url }}">
+            </iframe>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <center>
+                    <h3>{{ page.event.location.name }}</h3>
+                    <p>{{ page.event.location.description | markdownify }}</p>
+                    </center>
+                </div>
+                <div class="col">
+                    <p>Please arrange to be dropped off at:</p>
+                    <p style="padding-left: 30px;">{{ page.event.location.address }}</p>
+                    <p>Drop off / Check-in: <strong>{{ page.event.location.drop_off }}</strong></p>
+                    <p>Pick up*: <strong>{{ page.event.location.pick_up}}</strong></p>
+                    <h6>*Registrants are responsible for pick-up arrangements.</h6>
+                </div>
+            </div>
+        </div>
     </section>
     {% if page.event.year == site.current_event_year %}
     <section class="registration">
