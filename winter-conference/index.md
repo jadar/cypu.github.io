@@ -88,44 +88,14 @@ event:
 
 <section class="location" markdown="1">
 ### Location
-<div class="responsive-frame">
-<iframe 
-    width="800" 
-    height="300" 
-    frameborder="0" 
-    style="border:0;" 
-    allowfullscreen="" 
-    aria-hidden="false" 
-    tabindex="0"
-    src="{{ page.event.location.gmap_embed_url }}">
-</iframe>
-</div>
-<div class="container" markdown="1">
-<div class="row" markdown="1">
-<div class="col" markdown="1">
-{: .text-center }
-### {{ page.event.location.name }}
-{{ page.event.location.description | markdownify }}
 
-</div>
-<div class="col" markdown="1">
-Please arrange to be dropped off at:
+{% include map-section.html %}
 
-
-{{ page.event.location.address | markdownify }}{: style="padding-left: 30px;"}
-Registration: **{{ page.event.location.drop_off | date: "%A, %B %d at %I:%M %p" }}**  
-Pick up\*: **{{ page.event.location.pick_up | date: "%A, %B %d at %I:%M %p" }}**
-
-###### \*Registrants are responsible for pick-up arrangements.
-</div>
-</div>
-</div>
 </section>
 
 {% capture registrationDeadlineDate %}{{ page.event.start_date | date: '%F' }}{% endcapture %}
 {% capture buildDate %}{{ site.time | date: '%F' }}{% endcapture %}
 
-{% if buildDate < registrationDeadlineDate %} 
 <section class="registration" markdown="1">
 ### Registration
 
@@ -140,4 +110,3 @@ If you are writing a check, please make checks payable to: “CYPU”
 <a class="btn btn-primary btn-lg" href="{{ page.event.registration.registration_url }}">Register now!</a>
 </center>
 </section>
-{% endif %}

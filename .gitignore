@@ -6,4 +6,6 @@ vendor
 *.swp
 *.swo
 .DS_Store
-
+.vscode
+node_modules/
+bower_components/

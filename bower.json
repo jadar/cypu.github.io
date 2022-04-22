@@ -1,0 +1,21 @@
+{
+  "name": "cypu.github.io",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Jacob Rhoda <jacob@jadar.net>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jadar/cypu.github.io",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Skeleton-Sass": "skeleton-scss#*"
+  }
+}

@@ -3,23 +3,20 @@
     src="{{ page.event.location.gmap_embed_url }}">
   </iframe>
 </div>
-<div class="container" markdown="1">
-  <div class="row" markdown="1">
-    <div class="col" markdown="1">
-      {: .text-center }
-      ### {{ page.event.location.name }}
-      {{ page.event.location.description | markdownify }}
-
+<div class="container">
+  <div class="row">
+    <div class="one-half column">
+      <h3>{{ page.event.location.name }}</h3>
+      <h3>{{ page.event.location.description | markdownify }}</h3>
     </div>
-    <div class="col" markdown="1">
+    <div class="one-half column">
       Please arrange to be dropped off at:
 
+      {{ page.event.location.address | markdownify }}
+      Registration: <strong>{{ page.event.location.drop_off | date: "%A, %B %d at %I:%M %p" }}</strong>
+      Pick up*: <strong>{{ page.event.location.pick_up | date: "%A, %B %d at %I:%M %p" }}</strong>
 
-      {{ page.event.location.address | markdownify }}{: style="padding-left: 30px;"}
-      Registration: **{{ page.event.location.drop_off | date: "%A, %B %d at %I:%M %p" }}**
-      Pick up\*: **{{ page.event.location.pick_up | date: "%A, %B %d at %I:%M %p" }}**
-
-      ###### \*Registrants are responsible for pick-up arrangements.
+      <h6>*Registrants are responsible for pick-up arrangements.</h6>
     </div>
   </div>
 </div>
