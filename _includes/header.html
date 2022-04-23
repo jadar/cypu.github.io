@@ -1,34 +1,36 @@
 <header class="site-header">
 	<div class="branding">
-		{% if site.theme_settings.gravatar %}
+		{%- if site.theme_settings.gravatar %}
 		<a href="{{ site.baseurl }}/">
 			<img class="avatar" src="https://secure.gravatar.com/avatar/{{ site.theme_settings.gravatar }}?s=100" alt=""/>
 		</a>
-		{% elsif site.theme_settings.avatar %}
+		{%- elsif site.theme_settings.avatar %}
 		<a href="{{ site.baseurl }}/">
 			<img class="avatar" src="{{ site.baseurl }}/{{ site.theme_settings.avatar }}" alt=""/>
 		</a>
-		{% endif %}
+		{%- endif %}
 		<h1 class="site-title">
 			<a href="{{ site.baseurl }}/">{{ site.theme_settings.title }}</a>
 		</h1>
 	</div>
 	<nav class="site-nav" id="top-nav">
 		<ul>
-			{% if site.theme_settings.site_navigation_sort %}
-				{% assign site_pages = site.pages | sort: page.navigation_order %}
-			{% else %}
-				{% assign site_pages = site.pages %}
-			{% endif %}
-			{% for item in site_pages %}
-			{% if item.title and item.hide != true %}
+			{%- if site.theme_settings.site_navigation_sort %}
+				{%- assign site_pages = site.pages | sort: page.navigation_order %}
+			{%- else %}
+				{%- assign site_pages = site.pages | %}
+			{%- endif %}
+			{%- for item in site_pages %}
+			{% assign item_crumb = item.url | remove_first: '/' | split: '/' %}
+			{% assign depth = item_crumb.size %}
+			{%- if depth == 1 and item.title and item.hide != true %}
 			<li>
                 <a class="page-link {% if page.url == item.url %}active{% endif %}" href="{{ item.url | relative_url }}">
 					{{ item.title }}
 				</a>
 			</li>
-			{% endif %}
-			{% endfor %}
+			{%- endif %}
+			{%- endfor %}
             <!--
             <li class="icon">
                 <a href="javascript:void(0);" onclick="toggleNavigation()">
@@ -36,10 +38,10 @@
                 </a>
             </li>-->
 			<!-- Social icons from Font Awesome, if enabled  -->
-			{% include icons.html %}
+			{%- include icons.html %}
 
             <!-- Search bar -->
-            {% if site.theme_settings.search %}
+            {%- if site.theme_settings.search %}
             <li>
             <form action="{{ site.baseurl }}/search.html" method="get">
                 <input type="text" id="search-box" name="query" placeholder="Search" class="">
@@ -48,7 +50,7 @@
                 </button>
             </form>
             </li>
-            {% endif %}
+            {%- endif %}
 		</ul>
 	</nav>
 </header>

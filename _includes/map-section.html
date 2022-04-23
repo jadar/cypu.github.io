@@ -1,21 +1,27 @@
 <div class="responsive-frame">
-  <iframe width="800" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"
-    src="{{ page.event.location.gmap_embed_url }}">
+  <iframe
+   width="800" 
+   height="300" 
+   frameborder="0" 
+   style="border:0;" 
+   allowfullscreen="" 
+   aria-hidden="false" 
+   tabindex="0"
+   src="{{ page.event.location.gmap_embed_url }}">
   </iframe>
 </div>
 <div class="container">
   <div class="row">
-    <div class="one-half column">
+    <div class="col-6">
       <h3>{{ page.event.location.name }}</h3>
-      <h3>{{ page.event.location.description | markdownify }}</h3>
+      <p>{{ page.event.location.description | markdownify }}</p>
     </div>
-    <div class="one-half column">
-      Please arrange to be dropped off at:
-
-      {{ page.event.location.address | markdownify }}
-      Registration: <strong>{{ page.event.location.drop_off | date: "%A, %B %d at %I:%M %p" }}</strong>
-      Pick up*: <strong>{{ page.event.location.pick_up | date: "%A, %B %d at %I:%M %p" }}</strong>
-
+    <div class="col-6">
+      <p>Please arrange to be dropped off at:</p>
+      <p></p>
+      <p>{{ page.event.location.address | markdownify }}</p>
+      <p>Registration: <strong>{{ page.event.location.drop_off | date: "%A, %B %d at %I:%M %p" }}</strong></p>
+      <p>Pick up*: <strong>{{ page.event.location.pick_up | date: "%A, %B %d at %I:%M %p" }}</strong></p>
       <h6>*Registrants are responsible for pick-up arrangements.</h6>
     </div>
   </div>

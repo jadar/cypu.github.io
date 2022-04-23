@@ -1,12 +1,15 @@
+@import '_colors';
+
 $font-family-main: 'Roboto', Helvetica, Arial, sans-serif !default;
 $font-family-headings: 'Roboto', Helvetica, Arial, sans-serif !default;
-// $font-size: 1.10em !default; //15rem !default;
-$font-size: 1.5rem !default;
+$font-size: 1.10em !default; //15rem !default;
+// $font-size: 1.5rem !default;
 
-$brand-color: #2c3e50;
-$background-color: #ECF0F1; //#1d1d1d;
+$brand-color: $charcoal;
+$background-color: $cultured;// #ECF0F1; //#1d1d1d;
 $border-color: rgba(0, 0, 0, 0.1) !default; // rgba recommended if using feature images
 
 $text-color: #000; //#e8eaed;
-$link-color: #2D4263;
+$link-color: lighten($charcoal, 10%);// #2D4263;
+$light-text-color: $white;
 $selection-color: highlight; // visible when highlighting text

@@ -1,0 +1,14 @@
+{% assign address_encoded = include.location | replace '\n', ' ' | url_encode %}
+{% assign width = include.width | default: '100%' %}
+{% assign height = include.height | default: '300px' %}
+<div class="gmap-outer">
+  <iframe width="{{ width }}" height="{{ height }}" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"
+    src="https://maps.google.com/maps?q={{ address_encoded }}&t=&z=13&ie=UTF8&iwloc=&output=embed">
+  </iframe>
+  <style>
+    .gmap-outer {
+      width: {{ width }};
+      height: {{ height }}
+    }
+  </style>
+</div>

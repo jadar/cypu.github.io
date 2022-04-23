@@ -1,0 +1,34 @@
+.event-nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  justify-content: center;
+
+  .nav-link {
+    background: none;
+    border: 1px solid;
+    border-radius: .25rem;
+    border-color: $brand-color;
+  }
+
+  .nav-link.active,
+  .show > .nav-link {
+    color: $white;
+    background-color: $brand-color;
+  }
+}
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+
+  // Disabled state lightens text
+  &.disabled {
+    color: darken($charcoal, 50%);
+    pointer-events: none;
+    cursor: default;
+  }
+}

@@ -9,7 +9,8 @@ layout: default
         {% if page.event.registration_url %}<a href="{{ page.event.registration_url }}">Register</a>{% endif %}
     </header>
     <section class="description">
-        {{ page.event.description | markdownify }}
+        <h4>{{ page.event.description.short | markdownify }}</h4>
+        {{ page.event.description.long | markdownify }}
     </section>
     {% if page.event.speaker %}
     <section class="speaker">
@@ -31,7 +32,7 @@ layout: default
     {% endif %}
     <section class="location">
         <h3>Location</h3>
-        <div class="responsive-frame">
+        <!-- <div class="responsive-frame">
             <iframe 
                 width="800" 
                 height="300" 
@@ -59,7 +60,8 @@ layout: default
                     <h6>*Registrants are responsible for pick-up arrangements.</h6>
                 </div>
             </div>
-        </div>
+        </div> -->
+    {% include map-section.html %}
     </section>
     {% if page.event.year == site.current_event_year %}
     <section class="registration">

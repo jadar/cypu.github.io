@@ -1,29 +1,78 @@
-$primary: 90; // set to brand primary color
-$secondary: 270; // set to brand secondary color
-$red: 0;
-$amber: 60;
-$green: 165;
+// $primary: 90; // set to brand primary color
+// $secondary: 270; // set to brand secondary color
+// $red: 0;
+// $amber: 60;
+// $green: 165;
 
-$lightness: 50%;
+// $lightness: 50%;
 
-@function lighten($depth) {
-  @return $lightness + $depth;
-}
+// @function lighten($depth) {
+//   @return $lightness + $depth;
+// }
 
-$foreground: lighten(-40);
-$darkest: lighten(-30);
-$darker: lighten(-20);
-$dark: lighten(-10);
-$light: lighten(10);
-$lighter: lighten(20);
-$lightest: lighten(30);
-$background: lighten(40);
+// $foreground: lighten(-40);
+// $darkest: lighten(-30);
+// $darker: lighten(-20);
+// $dark: lighten(-10);
+// $light: lighten(10);
+// $lighter: lighten(20);
+// $lightest: lighten(30);
+// $background: lighten(40);
 
 
-@function spin($hue, $depth: 50) {
-  @return hsl($hue, 50%, $depth);
-}
+// @function spin($hue, $depth: 50) {
+//   @return hsl($hue, 50%, $depth);
+// }
 
-@function neutral($depth: 50) {
-  @return hsl($primary, 5%, $depth);
-}
+// @function neutral($depth: 50) {
+//   @return hsl($primary, 5%, $depth);
+// }
+
+/* Color Pallet from https://coolors.co/3f3f37-edffec-e85f5c-8c93a8-6e2594 */
+
+/* SCSS HEX */
+$charcoal: #2c3e50ff;
+$fire-engine-red: #c1292eff;
+$pewter-blue: #70a0afff;
+$yellow-green: #93c24fff;
+$orange-red: #f26430ff;
+$dark-orange: #fb8b24ff;
+$jonquil: #f7cb15ff;
+$white: #ffffffff;
+$cultured: #eef0f2ff;
+$light-french-beige: #c4a77dff;
+
+/* SCSS HSL */
+$charcoal: hsla(210, 29%, 24%, 1);
+$fire-engine-red: hsla(358, 65%, 46%, 1);
+$pewter-blue: hsla(194, 28%, 56%, 1);
+$yellow-green: hsla(85, 49%, 54%, 1);
+$orange-red: hsla(16, 88%, 57%, 1);
+$dark-orange: hsla(29, 96%, 56%, 1);
+$jonquil: hsla(48, 93%, 53%, 1);
+$white: hsla(0, 0%, 100%, 1);
+$cultured: hsla(210, 13%, 94%, 1);
+$light-french-beige: hsla(35, 38%, 63%, 1);
+
+/* SCSS RGB */
+$charcoal: rgba(44, 62, 80, 1);
+$fire-engine-red: rgba(193, 41, 46, 1);
+$pewter-blue: rgba(112, 160, 175, 1);
+$yellow-green: rgba(147, 194, 79, 1);
+$orange-red: rgba(242, 100, 48, 1);
+$dark-orange: rgba(251, 139, 36, 1);
+$jonquil: rgba(247, 203, 21, 1);
+$white: rgba(255, 255, 255, 1);
+$cultured: rgba(238, 240, 242, 1);
+$light-french-beige: rgba(196, 167, 125, 1);
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #2c3e50ff, #c1292eff, #70a0afff, #93c24fff, #f26430ff, #fb8b24ff, #f7cb15ff, #ffffffff, #eef0f2ff, #c4a77dff);
+$gradient-right: linear-gradient(90deg, #2c3e50ff, #c1292eff, #70a0afff, #93c24fff, #f26430ff, #fb8b24ff, #f7cb15ff, #ffffffff, #eef0f2ff, #c4a77dff);
+$gradient-bottom: linear-gradient(180deg, #2c3e50ff, #c1292eff, #70a0afff, #93c24fff, #f26430ff, #fb8b24ff, #f7cb15ff, #ffffffff, #eef0f2ff, #c4a77dff);
+$gradient-left: linear-gradient(270deg, #2c3e50ff, #c1292eff, #70a0afff, #93c24fff, #f26430ff, #fb8b24ff, #f7cb15ff, #ffffffff, #eef0f2ff, #c4a77dff);
+$gradient-top-right: linear-gradient(45deg, #2c3e50ff, #c1292eff, #70a0afff, #93c24fff, #f26430ff, #fb8b24ff, #f7cb15ff, #ffffffff, #eef0f2ff, #c4a77dff);
+$gradient-bottom-right: linear-gradient(135deg, #2c3e50ff, #c1292eff, #70a0afff, #93c24fff, #f26430ff, #fb8b24ff, #f7cb15ff, #ffffffff, #eef0f2ff, #c4a77dff);
+$gradient-top-left: linear-gradient(225deg, #2c3e50ff, #c1292eff, #70a0afff, #93c24fff, #f26430ff, #fb8b24ff, #f7cb15ff, #ffffffff, #eef0f2ff, #c4a77dff);
+$gradient-bottom-left: linear-gradient(315deg, #2c3e50ff, #c1292eff, #70a0afff, #93c24fff, #f26430ff, #fb8b24ff, #f7cb15ff, #ffffffff, #eef0f2ff, #c4a77dff);
+$gradient-radial: radial-gradient(#2c3e50ff, #c1292eff, #70a0afff, #93c24fff, #f26430ff, #fb8b24ff, #f7cb15ff, #ffffffff, #eef0f2ff, #c4a77dff);

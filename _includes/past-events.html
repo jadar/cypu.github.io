@@ -1,0 +1,17 @@
+{%- if page.url == '/' %}
+  {% assign depth = 2 %}
+{% else %}
+  {% assign depth = 1 %}
+{% endif -%}
+
+<section class="past-events">
+  {% assign pages = site.pages | where: 'dir', page.dir | sort: 'event.year' %}
+  <h3>Past Events</h3>
+  <nav>
+    <ul class="event-nav">
+      {%- for item in pages %}
+        <li class="nav-item"><a class="nav-link {% if page.url == item.url %}active{% endif %}" href="{{ item.url | relative_url }}">{{ item.event.year | default: item.title }}</a></li>
+      {%- endfor %}
+    </ul>
+  </nav>
+</section>

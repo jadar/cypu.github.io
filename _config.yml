@@ -14,6 +14,12 @@ remote_theme: rohanchandra/type-theme
 plugins:
   - jekyll-feed
 
+collections:
+  winter-conference:
+    sort_by: event.year
+  fall-ministry:
+    sort_by: event.year
+
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   title: CYPU
@@ -28,7 +34,7 @@ theme_settings:
      <p>Remove all header text in <code>_config.yml</code> to disable this feature.</p>
   header_text_feature_image:
   footer_text: >
-   Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+   © Covenanter Young People's Union
 
   # Icons
   rss: false
@@ -39,10 +45,10 @@ theme_settings:
   facebook:
   flickr:
   gitlab:
-  github: "rohanchandra/type-theme"
+  github: 
   gitter:
   google_plus:
-  instagram:
+  instagram: "thecypu"
   linkedin:  # Full URL
   pinterest:
   reddit:
